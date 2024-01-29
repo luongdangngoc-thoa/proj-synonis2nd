@@ -1,0 +1,1 @@
+(()=>{"use strict";const e=window.React;(0,window.wp.blocks.registerBlockType)("wdl/block-01",{title:"WDL Sample Block 01",icon:"smiley",category:"text",edit:()=>(0,e.createElement)("div",null,"Hello World! (Edit)"),save:()=>(0,e.createElement)("div",null,"Hello World! (Save)")})})();
