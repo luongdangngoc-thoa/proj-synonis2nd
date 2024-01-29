@@ -1,0 +1,23 @@
+.wp-block-wdl-block-05 .my-image img {
+  display: block;
+  position: relative;
+}
+ 
+.wp-block-wdl-block-05 .my-image button {
+  margin: 20px 10px;
+  height: 50px;
+  display: block;
+}
+ 
+/* 画像挿入時はボタンの高さを auto に */
+.wp-block-wdl-block-05 .my-image button.image-button {
+  height: auto;
+}
+ 
+.wp-block-wdl-block-05 .my-image {
+  border: 1px solid #ccc;
+}
+ 
+.wp-block-wdl-block-05 .my-image .removeImage {
+  height: 1.5rem;
+}
