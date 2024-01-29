@@ -34,17 +34,17 @@ registerBlockType("home/block-01", {
       selector: "img",
       attribute: "src",
     },
+    //RichText のsubタイトル
+    subTitle: {
+        type: "array",
+        source: "children",
+        selector: "h4",
+      },
     //RichText のリスト（ul/li）
     data: {
       type: "array",
       source: "children",
       selector: ".data",
-    },
-    //RichText のコメント（div/p）
-    comments: {
-      type: "array",
-      source: "children",
-      selector: ".comments",
     },
   },
 
@@ -52,7 +52,7 @@ registerBlockType("home/block-01", {
     // props からプロパティを抽出（分割代入）
     const {
       className,
-      attributes: { title, mediaID, mediaURL, data, comments },
+      attributes: { title, mediaID, mediaURL, data, subTitle },
       setAttributes,
     } = props;
     //タイトルを更新するハンドラ
@@ -66,14 +66,15 @@ registerBlockType("home/block-01", {
         mediaID: media.id,
       });
     };
+    //subTitleを更新するハンドラ
+    const onChangeSubTitle = (value) => {
+        setAttributes({ subTitle: value });
+      };
     //リストを更新するハンドラ
     const onChangeData = (value) => {
       setAttributes({ data: value });
     };
-    //コメントを更新するハンドラ
-    const onChangeComments = (value) => {
-      setAttributes({ comments: value });
-    };
+
     //画像を削除する（メディアをリセットする）ハンドラ
     const removeMedia = () => {
       props.setAttributes({
@@ -83,15 +84,33 @@ registerBlockType("home/block-01", {
     };
 
     return (
-      <div className={className}>
+
+      <div className={`${className} container`}>
+        <div className="content-wrapper">
         <RichText
           tagName="h3"
-          placeholder="タイトルを入力"
-          keepPlaceholderOnFocus={true}
+          placeholder="Title"
           value={title}
           onChange={onChangeTitle}
         />
-        <div className="my-image">
+        <RichText
+          tagName="h4"
+          className="subTitle"
+          placeholder="sub title"
+          value={subTitle}
+          onChange={onChangeSubTitle}
+        />
+        <RichText
+          tagName="ul"
+          multiline="li"
+          placeholder="list data"
+          value={data}
+          onChange={onChangeData}
+          className="data"
+        />
+        </div>
+
+        <div className="banner-image">
           <MediaUploadCheck>
             <MediaUpload
               onSelect={onSelectImage}
@@ -124,39 +143,24 @@ registerBlockType("home/block-01", {
             </MediaUploadCheck>
           )}
         </div>
-        <h3>データ</h3>
-        <RichText
-          tagName="ul"
-          multiline="li"
-          placeholder="データをリストで入力"
-          value={data}
-          onChange={onChangeData}
-          className="data"
-        />
-        <h3>コメント</h3>
-        <RichText
-          tagName="div"
-          multiline="p"
-          className="comments"
-          placeholder="コメントを入力"
-          value={comments}
-          onChange={onChangeComments}
-        />
-      </div>
+        </div>
     );
   },
   save: (props) => {
     const {
       className,
-      attributes: { title, mediaURL, data, comments },
+      attributes: { title, mediaURL, data, subTitle },
     } = props;
     return (
-      <div className={className}>
-        <RichText.Content tagName="h3" value={title} />
-        {mediaURL && <img className="my-image" src={mediaURL} alt="画像" />}
-        <RichText.Content tagName="ul" className="data" value={data} />
-        <RichText.Content tagName="div" className="comments" value={comments} />
-      </div>
+ 
+        <div className={`${className} container`}>
+            <div className="content-wrapper">
+            <RichText.Content tagName="h3" className="title" value={title} />
+            <RichText.Content tagName="h4" className="subTitle" value={subTitle} />
+            <RichText.Content tagName="ul" className="data" value={data} />
+            </div>
+            {mediaURL && <img className="banner-image" src={mediaURL} alt="画像" />}
+        </div>
     );
   },
 });

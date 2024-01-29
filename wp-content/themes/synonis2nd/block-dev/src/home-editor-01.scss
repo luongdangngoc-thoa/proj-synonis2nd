@@ -1,23 +1,42 @@
-.wp-block-wdl-block-05 .my-image img {
+.wp-block-home-block-01 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.wp-block-home-block-01 .banner-image {
+    width: 60%;
+  }
+   
+.wp-block-home-block-01 .banner-image img {
   display: block;
   position: relative;
 }
  
-.wp-block-wdl-block-05 .my-image button {
+.wp-block-home-block-01 .banner-image button {
   margin: 20px 10px;
   height: 50px;
   display: block;
 }
  
 /* 画像挿入時はボタンの高さを auto に */
-.wp-block-wdl-block-05 .my-image button.image-button {
+.wp-block-home-block-01 .banner-image button.image-button {
   height: auto;
 }
  
-.wp-block-wdl-block-05 .my-image {
+.wp-block-home-block-01 .banner-image {
   border: 1px solid orange;
 }
  
-.wp-block-wdl-block-05 .my-image .removeImage {
+.wp-block-home-block-01 .banner-image .removeImage {
   height: 1.5rem;
 }
+
+.wp-block-home-block-01 .content-wrapper {
+    border: 1px solid orange;
+}
+   
+.wp-block-home-block-01 .banner-image {
+    border: 1px solid orange;
+}
+   

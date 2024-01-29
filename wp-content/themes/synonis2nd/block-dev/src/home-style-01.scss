@@ -1,23 +1,30 @@
-.myRichTextContent {
-  padding: 20px;
+.wp-block-home-block-01 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
- 
-.wp-block-wdl-block-05 .my-image {
-  border: 3px solid #999;
-}
- 
-.wp-block-wdl-block-05 .data {
-  margin: 20px 0;
-  color: #aaa;
-}
-.wp-block-wdl-block-05 .comments {
-  border: 1px solid red;
-  padding: 1rem;
-  margin: 20px 0;
-}
- 
-.wp-block-wdl-block-05 .my-image img {
+
+.wp-block-home-block-01 .banner-image {
+    width: 60%;
+  }
+   
+.wp-block-home-block-01 .banner-image img {
   display: block;
-  z-index: 1;
   position: relative;
+}
+ 
+.wp-block-home-block-01 .banner-image button {
+  margin: 20px 10px;
+  height: 50px;
+  display: block;
+}
+ 
+/* 画像挿入時はボタンの高さを auto に */
+.wp-block-home-block-01 .banner-image button.image-button {
+  height: auto;
+}
+
+ 
+.wp-block-home-block-01 .banner-image .removeImage {
+  height: 1.5rem;
 }

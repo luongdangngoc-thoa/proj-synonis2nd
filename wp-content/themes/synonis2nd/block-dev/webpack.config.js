@@ -7,8 +7,6 @@ module.exports = {
   // 既存の設定を上書き
   entry: {
     "wdl-block-01": "./src/wdl-block-01.js",
-    "wdl-block-03": "./src/wdl-block-03.js",
-    "wdl-block-05": "./src/wdl-block-05.js",
     "home-block-01": "./src/home-block-01.js",
   },
   output: {
