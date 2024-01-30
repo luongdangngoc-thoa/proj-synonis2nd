@@ -14,9 +14,9 @@ function home_block_01_enqueue()
     wp_register_style(
         'home-block-01-style', //ハンドル名
         //style.scss は build ディレクトリに style-home-block-01.css として出力される
-        get_theme_file_uri('/custom-blocks/build/home-block-01.css'),
+        get_theme_file_uri('/custom-blocks/build/style-home-block-01.css'),
         array(),
-        filemtime(get_theme_file_path('/custom-blocks/build/home-block-01.css'))
+        filemtime(get_theme_file_path('/custom-blocks/build/style-home-block-01.css'))
     );
 
     //エディター用スタイル（追加）

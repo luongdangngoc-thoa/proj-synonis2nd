@@ -16,11 +16,29 @@ registerBlockType("home/block-01", {
   category: "layout",
   //入力された値を保存するための属性を設定
   attributes: {
-    //RichText のタイトル
-    title: {
+    //RichText heading
+    heading: {
+      type: "array",
+      source: "children",
+      selector: "h2",
+    },
+    //RichText のsubHeading
+    subHeading: {
       type: "array",
       source: "children",
       selector: "h3",
+    },
+    //RichText のリスト（ul/li）
+    list: {
+      type: "array",
+      source: "children",
+      selector: ".list",
+    },
+    //RichText button
+    buttonLable: {
+      type: "array",
+      source: "children",
+      selector: "h4",
     },
     //MediaUpload の value の値（選択された画像から取得）
     mediaID: {
@@ -34,45 +52,41 @@ registerBlockType("home/block-01", {
       selector: "img",
       attribute: "src",
     },
-    //RichText のsubタイトル
-    subTitle: {
-        type: "array",
-        source: "children",
-        selector: "h4",
-      },
-    //RichText のリスト（ul/li）
-    data: {
-      type: "array",
-      source: "children",
-      selector: ".data",
-    },
   },
 
   edit: (props) => {
     // props からプロパティを抽出（分割代入）
     const {
       className,
-      attributes: { title, mediaID, mediaURL, data, subTitle },
+      attributes: { heading, subHeading, list, buttonLable,mediaID, mediaURL },
       setAttributes,
     } = props;
     //タイトルを更新するハンドラ
-    const onChangeTitle = (value) => {
-      setAttributes({ title: value });
+    const onChangeheading = (value) => {
+      setAttributes({ heading: value });
     };
+
+    //subHeadingを更新するハンドラ
+    const onChangeSubHeading = (value) => {
+      setAttributes({ subHeading: value });
+    };
+
+    //リストを更新するハンドラ
+    const onChangelist = (value) => {
+      setAttributes({ list: value });
+    };
+
+    //リストを更新するハンドラ
+    const onChangeButtonLable = (value) => {
+      setAttributes({ buttonLable: value });
+    };
+
     //選択された画像の情報（URLとID）を更新するハンドラ
     const onSelectImage = (media) => {
       setAttributes({
         mediaURL: media.url,
         mediaID: media.id,
       });
-    };
-    //subTitleを更新するハンドラ
-    const onChangeSubTitle = (value) => {
-        setAttributes({ subTitle: value });
-      };
-    //リストを更新するハンドラ
-    const onChangeData = (value) => {
-      setAttributes({ data: value });
     };
 
     //画像を削除する（メディアをリセットする）ハンドラ
@@ -84,33 +98,39 @@ registerBlockType("home/block-01", {
     };
 
     return (
-
       <div className={`${className} container`}>
         <div className="content-wrapper">
-        <RichText
-          tagName="h3"
-          placeholder="Title"
-          value={title}
-          onChange={onChangeTitle}
-        />
-        <RichText
-          tagName="h4"
-          className="subTitle"
-          placeholder="sub title"
-          value={subTitle}
-          onChange={onChangeSubTitle}
-        />
-        <RichText
-          tagName="ul"
-          multiline="li"
-          placeholder="list data"
-          value={data}
-          onChange={onChangeData}
-          className="data"
-        />
+          <RichText
+            tagName="h2"
+            placeholder="heading"
+            value={heading}
+            onChange={onChangeheading}
+          />
+          <RichText
+            tagName="h3"
+            className="subHeading"
+            placeholder="sub heading"
+            value={subHeading}
+            onChange={onChangeSubHeading}
+          />
+          <RichText
+            tagName="ul"
+            multiline="li"
+            placeholder="list"
+            value={list}
+            onChange={onChangelist}
+            className="list"
+          />
+          <RichText
+            tagName="h4"
+            className="buttonLable"
+            placeholder="buttonLable"
+            value={buttonLable}
+            onChange={onChangeButtonLable}
+          />
         </div>
 
-        <div className="banner-image">
+        <div className="image-wrapper">
           <MediaUploadCheck>
             <MediaUpload
               onSelect={onSelectImage}
@@ -134,7 +154,6 @@ registerBlockType("home/block-01", {
             <MediaUploadCheck>
               <Button
                 onClick={removeMedia}
-                isLink
                 isDestructive
                 className="removeImage"
               >
@@ -143,24 +162,36 @@ registerBlockType("home/block-01", {
             </MediaUploadCheck>
           )}
         </div>
-        </div>
+      </div>
     );
   },
   save: (props) => {
     const {
       className,
-      attributes: { title, mediaURL, data, subTitle },
+      attributes: { heading, subHeading, list, buttonLable, mediaURL },
     } = props;
     return (
- 
-        <div className={`${className} container`}>
-            <div className="content-wrapper">
-            <RichText.Content tagName="h3" className="title" value={title} />
-            <RichText.Content tagName="h4" className="subTitle" value={subTitle} />
-            <RichText.Content tagName="ul" className="data" value={data} />
-            </div>
-            {mediaURL && <img className="banner-image" src={mediaURL} alt="画像" />}
+      <div className={`${className} container`}>
+        <div className="content-wrapper">
+          <RichText.Content tagName="h2" className="heading" value={heading} />
+          <RichText.Content
+            tagName="h3"
+            className="subHeading"
+            value={subHeading}
+          />
+          <RichText.Content tagName="ul" className="list" value={list} />
+          <RichText.Content
+            tagName="h4"
+            className="buttonLable"
+            value={buttonLable}
+          />
         </div>
+        {mediaURL && (
+          <div className="image-wrapper">
+            <img src={mediaURL} alt="画像" />
+          </div>
+        )}
+      </div>
     );
   },
 });

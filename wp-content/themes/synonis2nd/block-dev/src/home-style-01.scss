@@ -4,27 +4,12 @@
     align-items: center;
 }
 
-.wp-block-home-block-01 .banner-image {
+.wp-block-home-block-01 .image-wrapper {
     width: 60%;
   }
    
-.wp-block-home-block-01 .banner-image img {
+.wp-block-home-block-01 .image-wrapper img {
   display: block;
   position: relative;
 }
  
-.wp-block-home-block-01 .banner-image button {
-  margin: 20px 10px;
-  height: 50px;
-  display: block;
-}
- 
-/* 画像挿入時はボタンの高さを auto に */
-.wp-block-home-block-01 .banner-image button.image-button {
-  height: auto;
-}
-
- 
-.wp-block-home-block-01 .banner-image .removeImage {
-  height: 1.5rem;
-}
