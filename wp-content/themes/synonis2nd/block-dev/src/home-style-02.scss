@@ -1,0 +1,17 @@
+.wp-block-home-block-02 {
+    margin-top: 100px !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+}
+
+.wp-block-home-block-02 .image-wrapper {
+    width: 50%;
+  }
+   
+.wp-block-home-block-02 .image-wrapper img {
+  display: block;
+  position: relative;
+}
+ 
