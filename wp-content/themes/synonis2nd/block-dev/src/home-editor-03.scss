@@ -1,43 +1,45 @@
 .block-editor-block-list__block {
 .wp-block-home-block-03 {
-    display: flex;
+    margin-top: 100px !important;
+    display: flex; 
     flex-direction: column;
     align-items: center;
 }
 
-.wp-block-home-block-03 .banner-image {
-    width: 60%;
+.wp-block-home-block-03 .col-3 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.wp-block-home-block-03 .col-3 .col {
+    width: 30%;
+    border: 1px solid orange;
   }
    
-.wp-block-home-block-03 .banner-image img {
+   
+.wp-block-home-block-03 .image-wrapper img {
   display: block;
   position: relative;
 }
  
-.wp-block-home-block-03 .banner-image button {
+.wp-block-home-block-03 .image-wrapper button {
   margin: 20px 10px;
   height: 50px;
   display: block;
 }
  
 /* 画像挿入時はボタンの高さを auto に */
-.wp-block-home-block-03 .banner-image button.image-button {
+.wp-block-home-block-03 .image-wrapper button.image-button {
   height: auto;
 }
  
-.wp-block-home-block-03 .banner-image {
-  border: 1px solid orange;
-}
- 
-.wp-block-home-block-03 .banner-image .removeImage {
+.wp-block-home-block-03 .image-wrapper .removeImage {
   height: 1.5rem;
 }
 
 .wp-block-home-block-03 .content-wrapper {
     border: 1px solid orange;
 }
-   
-.wp-block-home-block-03 .banner-image {
-    border: 1px solid orange;
-}
+
 }

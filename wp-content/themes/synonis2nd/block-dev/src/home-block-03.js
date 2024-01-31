@@ -37,7 +37,7 @@ registerBlockType("home/block-03", {
     mediaURL_01: {
       type: "string",
       source: "attribute",
-      selector: "img",
+      selector: "img.image",
       attribute: "src",
     },
     //RichText の desc
@@ -55,7 +55,7 @@ registerBlockType("home/block-03", {
     mediaURL_02: {
       type: "string",
       source: "attribute",
-      selector: "img",
+      selector: "img.image",
       attribute: "src",
     },
     //RichText の desc
@@ -73,7 +73,7 @@ registerBlockType("home/block-03", {
     mediaURL_03: {
       type: "string",
       source: "attribute",
-      selector: "img",
+      selector: "img.image",
       attribute: "src",
     },
     //RichText の desc
@@ -209,7 +209,7 @@ registerBlockType("home/block-03", {
                       {!mediaID_01 ? (
                         "画像をアップロード"
                       ) : (
-                        <img src={mediaURL_01} alt="アップロード画像" />
+                        <img className="image" src={mediaURL_01} alt="アップロード画像" />
                       )}
                     </Button>
                   )}
@@ -252,7 +252,7 @@ registerBlockType("home/block-03", {
                       {!mediaID_02 ? (
                         "画像をアップロード"
                       ) : (
-                        <img src={mediaURL_02} alt="アップロード画像" />
+                        <img className="image" src={mediaURL_02} alt="アップロード画像" />
                       )}
                     </Button>
                   )}
@@ -295,7 +295,7 @@ registerBlockType("home/block-03", {
                       {!mediaID_03 ? (
                         "画像をアップロード"
                       ) : (
-                        <img src={mediaURL_03} alt="アップロード画像" />
+                        <img className="image" src={mediaURL_03} alt="アップロード画像" />
                       )}
                     </Button>
                   )}
@@ -353,7 +353,7 @@ registerBlockType("home/block-03", {
           <div className="col">
             {mediaURL_01 && (
               <div className="image-wrapper">
-                <img src={mediaURL_01} alt="画像" />
+                <img className="image" src={mediaURL_01} alt="画像" />
               </div>
             )}
             <RichText.Content
@@ -365,7 +365,7 @@ registerBlockType("home/block-03", {
           <div className="col">
             {mediaURL_02 && (
               <div className="image-wrapper">
-                <img src={mediaURL_02} alt="画像" />
+                <img className="image" src={mediaURL_02} alt="画像" />
               </div>
             )}
             <RichText.Content
@@ -377,7 +377,7 @@ registerBlockType("home/block-03", {
           <div className="col">
             {mediaURL_03 && (
               <div className="image-wrapper">
-                <img src={mediaURL_03} alt="画像" />
+                <img className="image" src={mediaURL_03} alt="画像" />
               </div>
             )}
             <RichText.Content
