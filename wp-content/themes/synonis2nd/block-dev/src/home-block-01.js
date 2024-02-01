@@ -21,12 +21,14 @@ registerBlockType("home/block-01", {
       type: "array",
       source: "children",
       selector: "h2",
+      default: "相続発生後の手続きは私たちにお任せてください。",
     },
     //RichText のsubHeading
     subHeading: {
       type: "array",
       source: "children",
       selector: "h3",
+      default: "こんなお悩みありますか？",
     },
     //RichText のリスト（ul/li）
     list: {
@@ -39,6 +41,7 @@ registerBlockType("home/block-01", {
       type: "array",
       source: "children",
       selector: "h4",
+      default: "問い合わせはこちら",
     },
     //MediaUpload の value の値（選択された画像から取得）
     mediaID: {
@@ -58,7 +61,7 @@ registerBlockType("home/block-01", {
     // props からプロパティを抽出（分割代入）
     const {
       className,
-      attributes: { heading, subHeading, list, buttonLable,mediaID, mediaURL },
+      attributes: { heading, subHeading, list, buttonLable, mediaID, mediaURL },
       setAttributes,
     } = props;
     //タイトルを更新するハンドラ
@@ -102,21 +105,21 @@ registerBlockType("home/block-01", {
         <div className="content-wrapper">
           <RichText
             tagName="h2"
-            placeholder="heading"
+            placeholder="Heading"
             value={heading}
             onChange={onChangeheading}
           />
           <RichText
             tagName="h3"
             className="subHeading"
-            placeholder="sub heading"
+            placeholder="Sub heading"
             value={subHeading}
             onChange={onChangeSubHeading}
           />
           <RichText
             tagName="ul"
             multiline="li"
-            placeholder="list"
+            placeholder="List"
             value={list}
             onChange={onChangelist}
             className="list"
@@ -124,7 +127,7 @@ registerBlockType("home/block-01", {
           <RichText
             tagName="h4"
             className="buttonLable"
-            placeholder="buttonLable"
+            placeholder="Button lable"
             value={buttonLable}
             onChange={onChangeButtonLable}
           />

@@ -21,12 +21,15 @@ registerBlockType("home/block-02", {
       type: "array",
       source: "children",
       selector: "h2",
+      default: "大切な資産と想♡を確実に安心して引き継ぐために",
     },
     //RichText のdescription
     description: {
       type: "array",
       source: "children",
       selector: ".desc",
+      default:
+        "当事務所は、主に〇O県·〇〇県·〇〇県の起業家·中小企業経営者の皆さまからのご相談に対応しております。",
     },
     //MediaUpload の value の値（選択された画像から取得）
     mediaID: {
@@ -46,7 +49,7 @@ registerBlockType("home/block-02", {
     // props からプロパティを抽出（分割代入）
     const {
       className,
-      attributes: { heading,description, mediaID, mediaURL },
+      attributes: { heading, description, mediaID, mediaURL },
       setAttributes,
     } = props;
     //タイトルを更新するハンドラ
