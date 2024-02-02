@@ -10,6 +10,7 @@ module.exports = {
     "home-block-01": "./src/home-block-01.js",
     "home-block-02": "./src/home-block-02.js",
     "home-block-03": "./src/home-block-03.js",
+    "about-block-01": "./src/about-block-01.js",
   },
   output: {
     path: path.join(__dirname, "../custom-blocks/build"),
@@ -36,6 +37,12 @@ module.exports = {
           chunks: "all",
           enforce: true,
           name: "style-home-block-03", //出力されるファイル名
+        },
+        style_04: {
+          test: /[\\/]about-style-01\.(sc|sa|c)ss$/, //対象のファイル style-02.scss
+          chunks: "all",
+          enforce: true,
+          name: "style-about-block-01", //出力されるファイル名
         },
         default: false,
       },

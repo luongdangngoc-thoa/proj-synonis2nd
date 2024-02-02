@@ -1,0 +1,60 @@
+.block-editor-block-list__block {
+  .wp-block-about-block-01 {
+      margin-top: 100px !important;
+      // display: flex; 
+       flex-direction: column;
+      justify-content: space-between;
+      width: 100%;
+      margin: 0 auto;
+  }
+  
+  .wp-block-about-block-01 .content-wrapper {
+      text-align: center;
+      display: flex;
+      gap: 20px;
+  }
+  
+  .wp-block-about-block-01.custom_block_1{
+    display: flex;
+  }
+  .wp-block-about-block-01 .col-3 {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+  }
+  
+  .wp-block-about-block-01 .col-3 .col {
+      width: 30%;
+      border: 1px solid orange;
+    }
+     
+     
+  .wp-block-about-block-01 .image-wrapper img {
+    display: block;
+    position: relative;
+  }
+   
+  .wp-block-about-block-01 .image-wrapper button {
+    margin: 20px 10px;
+    height: 50px;
+    display: block;
+  }
+   
+  /* 画像挿入時はボタンの高さを auto に */
+  .wp-block-about-block-01 .image-wrapper button.image-button {
+    height: auto;
+  }
+   
+  .wp-block-about-block-01 .image-wrapper .removeImage {
+    height: 1.5rem;
+  }
+  
+  .wp-block-about-block-01 .content-about {
+       border: 1px solid orange;
+       align-items: center;
+       width: 70%;
+  }
+  .wp-block-about-block-01 .image-wrapper {
+    border: 1px solid orange;
+}
+  }

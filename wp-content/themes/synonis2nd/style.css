@@ -1,5 +1,5 @@
 /*!
-Theme Name: synonis
+Theme Name: synonis2nd
 Theme URI: http://underscores.me/
 Author: Underscores.me
 Author URI: http://underscores.me/
@@ -384,6 +384,7 @@ template {
 *::before,
 *::after {
 	box-sizing: inherit;
+	/* margin-right: 20px; */
 }
 
 html {
@@ -537,7 +538,7 @@ a {
 }
 
 a:visited {
-	color: #800080;
+	color: #111;
 }
 
 a:hover,
@@ -653,10 +654,11 @@ textarea {
 }
 
 .main-navigation ul {
-	display: none;
+	display: flex;
 	list-style: none;
 	margin: 0;
-	padding-left: 0;
+	/* padding-left: 60rem;
+	margin-right: 20rem; */
 }
 
 .main-navigation ul ul {
@@ -739,6 +741,10 @@ textarea {
 .post-navigation .nav-next {
 	text-align: end;
 	flex: 1 0 50%;
+}
+
+.site-header {
+	color: #111;
 }
 
 /* Posts and pages
@@ -967,10 +973,93 @@ textarea {
 	margin-right: auto;
 	margin-bottom: 1.5em;
 }
+/* .container_ws{
+	display: flex;
+} */
+.navbartoggler{
+	display: none;
+}
+.container_ws{
+	display: flex;
+	padding-right: 0;
+	justify-content: space-between;
+	gap: 30px;
+}
+.navbarbrand{
+	padding-left: 20px;
+	/* justify-content: space-between; */
+	
+}
+.navbarcollapse{
+	display: flex;
+	gap: 20px;
+}
+.navbar_nav{
+	display: flex;
+	gap: 30px;
+}
 
+/* .has-text-color {
+	color: red !important;
+} */
+.wp-block-image .size-large .is-resized{
+	width: 100%;
+	height: 70%;
+}
+.wp-block-image img{
+	height: 100%;
+    object-fit: cover;
+    width: 100%;
+}
+.wp-block-navigation__container:only-child, .wp-block-page-list:only-child {
+	justify-content: end;
+	padding-right: 80px;
+	display: flex;
+}
+.wp-container-core-group-layout-1.wp-container-core-group-layout-1{
+	/* flex-direction: column;
+    align-items: flex-start; */
+    padding-left: 80px;
+    /* width: 50%; */
+    /* margin: 0 auto; */
+}
+.wp-container-core-group-layout-4.wp-container-core-group-layout-4{
 
-.container {
-    max-width: 1280px;
-    margin: auto;
-    padding: 0 20px;
+	/* flex-direction: column;
+    align-items: flex-start;
+    padding-left: 80px; */
+    width: 100%;
+    /* margin: 0 auto; */
+}
+.wp-container-core-group-layout-5.wp-container-core-group-layout-5 {
+	width: 50%;
+    margin: 0 auto;
+}
+.wp_header{
+gap: 30px;
+
+}
+.menu-item-1496.nav-item{
+	background-color: darkgreen;
+	padding: 20px;
+	font-size: 16px;
+	text-align: center;
+    color: white!important;
+    font-family: Noto Sans JP;
+}
+.menu-item-1530.nav-item{
+	padding: 20px;
+	font-size: 16px;
+}
+.menu-item-1424.nav-item{
+	padding: 20px;
+	font-size: 16px;
+}
+.menu-item-1425.nav-item{
+	padding: 20px;
+	font-size: 16px;
+}
+.menu-item-1426.nav-item{
+	padding: 20px;
+	font-size: 16px;
 }
