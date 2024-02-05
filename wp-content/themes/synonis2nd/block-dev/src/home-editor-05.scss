@@ -1,48 +1,55 @@
 .block-editor-block-list__block {
-.wp-block-home-block-04 {
+.wp-block-home-block-05 {
     margin-top: 100px !important;
     display: flex; 
     flex-direction: column;
     align-items: center;
 }
 
-.wp-block-home-block-04 .heading-wrapper {
+.wp-block-home-block-05 .heading-wrapper {
     text-align: center;
 }
 
-.wp-block-home-block-04 .col-3 {
+.wp-block-home-block-05 .col-2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.wp-block-home-block-05 .col-3 {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.wp-block-home-block-04 .col-3 .col {
+.wp-block-home-block-05 .col-3 .col {
     width: 30%;
     border: 1px solid orange;
   }
    
    
-.wp-block-home-block-04 .image-wrapper img {
+.wp-block-home-block-05 .image-wrapper img {
   display: block;
   position: relative;
 }
  
-.wp-block-home-block-04 .image-wrapper button {
+.wp-block-home-block-05 .image-wrapper button {
   margin: 20px 10px;
   height: 50px;
   display: block;
 }
  
 /* 画像挿入時はボタンの高さを auto に */
-.wp-block-home-block-04 .image-wrapper button.image-button {
+.wp-block-home-block-05 .image-wrapper button.image-button {
   height: auto;
 }
  
-.wp-block-home-block-04 .image-wrapper .removeImage {
+.wp-block-home-block-05 .image-wrapper .removeImage {
   height: 1.5rem;
 }
 
-.wp-block-home-block-04 .heading-wrapper {
+.wp-block-home-block-05 .heading-wrapper {
     border: 1px solid orange;
 }
 

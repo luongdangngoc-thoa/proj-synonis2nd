@@ -1,0 +1,35 @@
+.wp-block-home-block-04 {
+    margin-top: 100px !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.wp-block-home-block-04 .heading-wrapper {
+    text-align: center;
+}
+
+.wp-block-home-block-04 .col-2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.wp-block-home-block-04 .col-3 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.wp-block-home-block-04 .col-3 .col {
+    width: 30%;
+}
+
+   
+.wp-block-home-block-04 .image-wrapper img {
+  display: block;
+  position: relative;
+}
+ 
+

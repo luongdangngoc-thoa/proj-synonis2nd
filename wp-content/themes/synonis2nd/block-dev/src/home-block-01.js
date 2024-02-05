@@ -102,7 +102,7 @@ registerBlockType("home/block-01", {
 
     return (
       <div className={`${className} container`}>
-        <div className="content-wrapper">
+        <div className="heading-wrapper">
           <RichText
             tagName="h2"
             placeholder="Heading"
@@ -175,7 +175,7 @@ registerBlockType("home/block-01", {
     } = props;
     return (
       <div className={`${className} container`}>
-        <div className="content-wrapper">
+        <div className="heading-wrapper">
           <RichText.Content tagName="h2" className="heading" value={heading} />
           <RichText.Content
             tagName="h3"
