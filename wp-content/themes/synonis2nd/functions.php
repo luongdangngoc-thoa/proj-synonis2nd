@@ -180,3 +180,5 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 include(get_theme_file_path('/custom-blocks/block-registration/register-home-block-01.php'));
 include(get_theme_file_path('/custom-blocks/block-registration/register-home-block-02.php'));
 include(get_theme_file_path('/custom-blocks/block-registration/register-home-block-03.php'));
+include(get_theme_file_path('/custom-blocks/block-registration/register-home-block-04.php'));
+include(get_theme_file_path('/custom-blocks/block-registration/register-home-block-05.php'));
