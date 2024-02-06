@@ -182,3 +182,4 @@ include(get_theme_file_path('/custom-blocks/block-registration/register-home-blo
 include(get_theme_file_path('/custom-blocks/block-registration/register-home-block-03.php'));
 include(get_theme_file_path('/custom-blocks/block-registration/register-home-block-04.php'));
 include(get_theme_file_path('/custom-blocks/block-registration/register-home-block-05.php'));
+include(get_theme_file_path('/custom-blocks/block-registration/register-home-block-06.php'));
