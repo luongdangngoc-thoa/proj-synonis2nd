@@ -20,14 +20,14 @@ registerBlockType("home/block-03", {
     heading: {
       type: "array",
       source: "children",
-      selector: "h2",
+      selector: "h2.heading",
       default: "私たちの想い",
     },
     //RichText のsubHeading
     subHeading: {
       type: "array",
       source: "children",
-      selector: "h3",
+      selector: "h3.subHeading",
       default:
         "相続手続きをお手伝いさせていただくに私たちの想い、私たちが大切にしていることがあります",
     },
@@ -184,13 +184,14 @@ registerBlockType("home/block-03", {
         <div className="heading-wrapper">
           <RichText
             tagName="h2"
+            className="heading"
             placeholder="heading"
             value={heading}
             onChange={onChangeHeading}
           />
           <RichText
             tagName="h3"
-            className="SubHeading"
+            className="subHeading"
             placeholder="SubHeading"
             value={subHeading}
             onChange={onChangeSubHeading}
@@ -363,7 +364,7 @@ registerBlockType("home/block-03", {
           <RichText.Content tagName="h2" className="heading" value={heading} />
           <RichText.Content
             tagName="h3"
-            className="SubHeading"
+            className="subHeading"
             value={subHeading}
           />
         </div>

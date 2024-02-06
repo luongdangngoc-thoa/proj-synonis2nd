@@ -1,0 +1,45 @@
+.block-editor-block-list__block {
+.wp-block-home-block-06 {
+    margin-top: 100px !important;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+}
+
+.wp-block-home-block-06 .heading-wrapper {
+    text-align: center;
+}
+
+.wp-block-home-block-06 .col-3 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+
+.wp-block-home-block-06 .col-3 .col {
+    width: 30%;
+    border: 1px solid orange;
+  }
+
+.button-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.button-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.button-to-form {
+    display: flex;
+}
+   
+}  
+
+ 
