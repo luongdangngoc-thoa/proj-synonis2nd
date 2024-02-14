@@ -21,7 +21,7 @@ registerBlockType("home/block-04", {
             type: "array",
             source: "children",
             selector: "h2",
-            default: "私たちの想い",
+            default: "サポート内容",
         },
         //RichText のsubHeading
         subHeading: {
@@ -48,7 +48,7 @@ registerBlockType("home/block-04", {
             type: "array",
             source: "children",
             selector: ".title_01",
-            default: "依頼者に寄り添い、ご不安やお悩みの解消に全力を尽くします",
+            default: "ご不安やお悩み",
         },
         //RichText の desc
         description_01: {
@@ -74,7 +74,7 @@ registerBlockType("home/block-04", {
             type: "array",
             source: "children",
             selector: ".title_02",
-            default: "依頼者に寄り添い、ご不安やお悩みの解消に全力を尽くします",
+            default: "ご不安やお悩み",
         },
         //RichText の desc
         description_02: {
@@ -100,7 +100,7 @@ registerBlockType("home/block-04", {
             type: "array",
             source: "children",
             selector: ".title_03",
-            default: "依頼者に寄り添い、ご不安やお悩みの解消に全力を尽くします",
+            default: "ご不安やお悩み",
         },
         //RichText の desc
         description_03: {
@@ -126,7 +126,7 @@ registerBlockType("home/block-04", {
             type: "array",
             source: "children",
             selector: ".title_04",
-            default: "依頼者に寄り添い、ご不安やお悩みの解消に全力を尽くします",
+            default: "ご不安やお悩み",
         },
         //RichText の desc
         description_04: {
@@ -152,7 +152,7 @@ registerBlockType("home/block-04", {
             type: "array",
             source: "children",
             selector: ".title_05",
-            default: "依頼者に寄り添い、ご不安やお悩みの解消に全力を尽くします",
+            default: "ご不安やお悩み",
         },
         //RichText の desc
         description_05: {

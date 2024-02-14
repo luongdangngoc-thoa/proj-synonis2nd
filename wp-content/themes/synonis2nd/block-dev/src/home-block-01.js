@@ -35,14 +35,21 @@ registerBlockType("home/block-01", {
       type: "array",
       source: "children",
       selector: ".list",
+      default: [<li>商品をPRするためのアイデアが欲しい</li>, <li>商品をPRするためのアイデアが欲しい</li>],
     },
     //RichText button
     buttonLable: {
       type: "array",
       source: "children",
-      selector: "h4",
+      selector: "a.buttonLable",
       default: "問い合わせはこちら",
     },
+    buttonURL: {
+        type: "string",
+        source: "attribute",
+        selector: "a",
+        attribute: "href",
+      },
     //MediaUpload の value の値（選択された画像から取得）
     mediaID: {
       type: "number",
@@ -61,7 +68,7 @@ registerBlockType("home/block-01", {
     // props からプロパティを抽出（分割代入）
     const {
       className,
-      attributes: { heading, subHeading, list, buttonLable, mediaID, mediaURL },
+      attributes: { heading, subHeading, list, buttonLable, buttonURL,  mediaID, mediaURL },
       setAttributes,
     } = props;
     //タイトルを更新するハンドラ
@@ -83,6 +90,11 @@ registerBlockType("home/block-01", {
     const onChangeButtonLable = (value) => {
       setAttributes({ buttonLable: value });
     };
+
+    //リストを更新するハンドラ
+    const onChangeButtonURL = (value) => {
+        setAttributes({ buttonURL: value });
+      };
 
     //選択された画像の情報（URLとID）を更新するハンドラ
     const onSelectImage = (media) => {
@@ -125,11 +137,18 @@ registerBlockType("home/block-01", {
             className="list"
           />
           <RichText
-            tagName="h4"
+            tagName="p"
             className="buttonLable"
             placeholder="Button lable"
             value={buttonLable}
             onChange={onChangeButtonLable}
+          />
+           <RichText
+            tagName="p"
+            className="buttonURL"
+            placeholder="Button URL"
+            value={buttonURL}
+            onChange={onChangeButtonURL}
           />
         </div>
 
@@ -171,7 +190,7 @@ registerBlockType("home/block-01", {
   save: (props) => {
     const {
       className,
-      attributes: { heading, subHeading, list, buttonLable, mediaURL },
+      attributes: { heading, subHeading, list, buttonLable, buttonURL,  mediaURL },
     } = props;
     return (
       <div className={`${className} container`}>
@@ -184,9 +203,11 @@ registerBlockType("home/block-01", {
           />
           <RichText.Content tagName="ul" className="list" value={list} />
           <RichText.Content
-            tagName="h4"
+            tagName="a"
             className="buttonLable"
+            href={buttonURL}
             value={buttonLable}
+            allowedFormats={['core/bold', 'core/italic', 'core/link']}
           />
         </div>
         {mediaURL && (

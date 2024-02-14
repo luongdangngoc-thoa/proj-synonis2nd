@@ -21,7 +21,7 @@ registerBlockType("home/block-05", {
             type: "array",
             source: "children",
             selector: "h2",
-            default: "私たちの想い",
+            default: "ご相談からご依頼までの流れ",
         },
         //RichText のsubHeading
         subHeading: {
@@ -48,14 +48,14 @@ registerBlockType("home/block-05", {
             type: "array",
             source: "children",
             selector: ".title_01",
-            default: "依頼者に寄り添い、ご不安やお悩みの解消に全力を尽くします",
+            default: "お問い合わせ",
         },
         //RichText の desc
         description_01: {
             type: "array",
             source: "children",
             selector: ".desc_01",
-            default: "依頼者に寄り添い、ご不安やお悩みの解消に全力を尽くします",
+            default: "まずは、お電話かメールにてお問い合わせください。",
         },
         //MediaUpload の value の値（選択された画像から取得）
         mediaID_02: {
@@ -74,14 +74,14 @@ registerBlockType("home/block-05", {
             type: "array",
             source: "children",
             selector: ".title_02",
-            default: "依頼者に寄り添い、ご不安やお悩みの解消に全力を尽くします",
+            default: "無料相談",
         },
         //RichText の desc
         description_02: {
             type: "array",
             source: "children",
             selector: ".desc_02",
-            default: "依頼者に寄り添い、ご不安やお悩みの解消に全力を尽くします",
+            default: "ご相談内容をしっかりとお聞きし、解決方法を提案します。",
         },
         //MediaUpload の value の値（選択された画像から取得）
         mediaID_03: {
@@ -100,14 +100,14 @@ registerBlockType("home/block-05", {
             type: "array",
             source: "children",
             selector: ".title_03",
-            default: "依頼者に寄り添い、ご不安やお悩みの解消に全力を尽くします",
+            default: "見積もり・ご検討",
         },
         //RichText の desc
         description_03: {
             type: "array",
             source: "children",
             selector: ".desc_03",
-            default: "依頼者に寄り添い、ご不安やお悩みの解消に全力を尽くします",
+            default: "費用について見積もりを提示いたします。じっくりご検討ください。",
         },
         //MediaUpload の value の値（選択された画像から取得）
         mediaID_04: {
@@ -126,47 +126,21 @@ registerBlockType("home/block-05", {
             type: "array",
             source: "children",
             selector: ".title_04",
-            default: "依頼者に寄り添い、ご不安やお悩みの解消に全力を尽くします",
+            default: "ご依頼",
         },
         //RichText の desc
         description_04: {
             type: "array",
             source: "children",
             selector: ".desc_04",
-            default: "依頼者に寄り添い、ご不安やお悩みの解消に全力を尽くします",
-        },
-        //MediaUpload の value の値（選択された画像から取得）
-        mediaID_05: {
-            type: "number",
-            default: 0,
-        },
-        //MediaUpload の画像の URL（選択された画像から取得）
-        mediaURL_05: {
-            type: "string",
-            source: "attribute",
-            selector: "img.image_05",
-            attribute: "src",
-        },
-        //RichText の title
-        title_05: {
-            type: "array",
-            source: "children",
-            selector: ".title_05",
-            default: "依頼者に寄り添い、ご不安やお悩みの解消に全力を尽くします",
-        },
-        //RichText の desc
-        description_05: {
-            type: "array",
-            source: "children",
-            selector: ".desc_05",
-            default: "依頼者に寄り添い、ご不安やお悩みの解消に全力を尽くします",
+            default: "ご検討の上、ご納得いただいた場合は、正式にご依頼ください。",
         },
         //RichText の desc
         text_bottom: {
             type: "array",
             source: "children",
             selector: ".text-bottom",
-            default: "依頼者に寄り添い、ご不安やお悩みの解消に全力を尽くします",
+            default: "来所・訪問に加えてオンラインでもご相談に対応しております。",
         },
     },
 
@@ -306,28 +280,7 @@ registerBlockType("home/block-05", {
             setAttributes({ description_04: value });
         };
 
-        const onSelectImage_05 = (media) => {
-            setAttributes({
-                mediaURL_05: media.url,
-                mediaID_05: media.id,
-            });
-        };
-        //画像を削除する（メディアをリセットする）ハンドラ
-        const removeMedia_05 = () => {
-            props.setAttributes({
-                mediaID_05: 0,
-                mediaURL_05: "",
-            });
-        };
-        //title を更新するハンドラ
-        const onChangeTitle_05 = (value) => {
-            setAttributes({ title_05: value });
-        };
 
-        //description を更新するハンドラ
-        const onChangeDescription_05 = (value) => {
-            setAttributes({ description_05: value });
-        };
 
         //description を更新するハンドラ
         const onChangeTextBottom = (value) => {
@@ -583,62 +536,6 @@ registerBlockType("home/block-05", {
                 </div>
               </div>
 
-              <div className="col">
-                <div className="image-wrapper">
-                  <MediaUploadCheck>
-                    <MediaUpload
-                      onSelect={onSelectImage_05}
-                      allowedTypes={["image"]}
-                      value={mediaID_05}
-                      render={({ open }) => (
-                        <Button
-                          className={
-                            mediaID_05 ? "image-button" : "button button-large"
-                          }
-                          onClick={open}
-                        >
-                          {!mediaID_05 ? (
-                            "画像をアップロード"
-                          ) : (
-                            <img
-                              className="image_05"
-                              src={mediaURL_05}
-                              alt="アップロード画像"
-                            />
-                          )}
-                        </Button>
-                      )}
-                    />
-                  </MediaUploadCheck>
-                  {mediaID_05 != 0 && (
-                    <MediaUploadCheck>
-                      <Button
-                        onClick={removeMedia_05}
-                        isDestructive
-                        className="removeImage"
-                      >
-                        画像を削除
-                      </Button>
-                    </MediaUploadCheck>
-                  )}
-                </div>
-                <div className="content-wrapper">
-                  <RichText
-                    tagName="h4"
-                    className="title_05"
-                    placeholder="title"
-                    value={title_05}
-                    onChange={onChangeTitle_05}
-                  />
-                  <RichText
-                    tagName="p"
-                    className="desc_05"
-                    placeholder="description"
-                    value={description_05}
-                    onChange={onChangeDescription_05}
-                  />
-                </div>
-              </div>
             </div>
 
             <div>
@@ -766,26 +663,7 @@ registerBlockType("home/block-05", {
                             />
                         </div>
                     </div>
-                    
-                    <div className="col">
-                        {mediaURL_05 && (
-                            <div className="image-wrapper">
-                                <img className="image_05" src={mediaURL_05} alt="画像" />
-                            </div>
-                        )}
-                        <div className="content-wrapper">
-                            <RichText.Content
-                                tagName="h4"
-                                className="title_05"
-                                value={title_05}
-                            />
-                            <RichText.Content
-                                tagName="p"
-                                className="desc_05"
-                                value={description_05}
-                            />
-                        </div>
-                    </div>
+
                 </div>
 
                 <RichText.Content
