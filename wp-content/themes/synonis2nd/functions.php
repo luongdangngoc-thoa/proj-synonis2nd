@@ -53,6 +53,41 @@ function synonis_setup() {
 		)
 	);
 
+    function register_menus()
+    {
+        register_nav_menus(
+            array(
+                'main-menu' => __('Main Menu'),
+            )
+        );
+    }
+    add_action('init', 'register_menus');
+
+
+    //   add the option to add classes to list items of nav
+    function add_menu_link_class($atts, $item, $args)
+    {
+        if (property_exists($args, 'link_class')) {
+            $atts['class'] = $args->link_class;
+        }
+        return $atts;
+    }
+    add_filter('nav_menu_link_attributes', 'add_menu_link_class', 1, 3);
+
+
+    //   add the option to add classes to list items of nav
+    function add_menu_list_item_class($classes, $item, $args)
+    {
+        if (property_exists($args, 'list_item_class')) {
+            $classes[] = $args->list_item_class;
+        }
+        return $classes;
+    }
+    add_filter('nav_menu_css_class', 'add_menu_list_item_class', 1, 3);
+
+
+    
+
 	/*
 		* Switch default core markup for search form, comment form, and comments
 		* to output valid HTML5.
@@ -139,9 +174,12 @@ add_action( 'widgets_init', 'synonis_widgets_init' );
  */
 function synonis_scripts() {
 	wp_enqueue_style( 'synonis-style', get_stylesheet_uri(), array(), _S_VERSION );
+    wp_enqueue_style('custom-style', get_template_directory_uri() . '/css/index.css');
 	wp_style_add_data( 'synonis-style', 'rtl', 'replace' );
 
+    wp_enqueue_script('jquery.min', get_template_directory_uri() . '/js/jquery.min.js', array(), _S_VERSION, true);
 	wp_enqueue_script( 'synonis-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+    wp_enqueue_script('main', get_template_directory_uri() . '/js/main.js', array(), _S_VERSION, true);
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -175,6 +213,42 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
+
+
+//WebPのアップロードを許可
+function add_upload_mines($mines)
+{
+    $mines['webp'] = 'image/webp';
+    return $mines;
+}
+add_filter('mime_types', 'add_upload_mines');
+
+
+// Set upload svg
+function cc_mime_types($mimes)
+{
+    $mimes['svg'] = 'image/svg+xml';
+    return $mimes;
+}
+add_filter('upload_mimes', 'cc_mime_types');
+
+
+
+
+function webp_upload_mimes($existing_mimes)
+{
+    // add webp to the list of mime types
+    $existing_mimes['webp'] = 'image/webp';
+
+    // return the array back to the function with our added mime type
+    return $existing_mimes;
+}
+add_filter('mime_types', 'webp_upload_mimes');
+
+
+// Prevent WordPress from Scaling Large Images
+add_filter('big_image_size_threshold', '__return_false');
 
 // functions.php でregister-wdl-block-01.phpをインクルードします。
 include(get_theme_file_path('/custom-blocks/block-registration/register-home-block-01.php'));

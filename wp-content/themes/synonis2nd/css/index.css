@@ -1,0 +1,154 @@
+/*  css for header  */
+body {
+    margin-top: 50px;
+}
+@media screen and (max-width: 900px) {
+    .pc-header-wrapper {
+        display: none !important;
+    }
+
+    .sp-header-wrapper {
+        display: block !important;
+    }
+}
+
+header {
+    position: fixed;
+    top: 30px;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    background-color: transparent;
+    background: #fff;
+        -webkit-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+  -moz-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+  box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+}
+
+.pc-header {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-logo a {
+    padding-left: 1.2rem;
+}
+
+.header-nav {
+    background: #fff;
+    margin: unset !important;
+    padding: unset !important;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    gap: 2rem;
+}
+
+.header-nav .header-nav-item {
+    color: #000000;
+    padding: 1.2rem;
+    list-style-type: none;
+}
+
+.header-nav-item a {
+     text-decoration: unset !important;
+}
+.header-nav-item a:visited {
+    color: unset !important;
+}
+
+.header-nav-item:last-child {
+    background-color: darkgreen;
+    color: #ffff;
+}
+  
+  .header-nav-item:hover {
+    cursor: pointer;
+    color: #fff;
+    background-color: darkgreen;
+  }
+  
+  .header-nav-item {
+    font-weight: 700;
+    letter-spacing: 0.06em;
+  }
+
+@media screen and (max-width: 900px) {
+    header {
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+}
+
+.sp-header-wrapper {
+    display: none;
+}
+
+.sp-header {
+    height: 68px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-menu {
+    cursor: pointer;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 400;
+    top: 30px;
+    left: 0;
+    background: #fff;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav-inner {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.sidenav .sidenav-inner .header-nav-item {
+    justify-content: left;
+    width: 100%;
+}
+
+.sidenav .sidenav-inner .header-nav-item {
+    text-decoration: none;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav .sidenav-inner .header-nav-item:hover {
+    color: #fff;
+    background-color: darkgreen;
+}
+
+.sidenav .sidenav-inner .header-nav-item a {
+    display: inline-block;
+    padding: 20px 0 20px 40px;
+    width: 100%;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    cursor: pointer;
+    border: #000000 1px solid;
+}
+
+
+
+/* css for body */
+
+main {
+    margin-top: 70px;
+}
+
