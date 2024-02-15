@@ -45,7 +45,6 @@ header {
 }
 
 .header-nav .header-nav-item {
-    color: #000000;
     padding: 1.2rem;
     list-style-type: none;
 }
@@ -54,18 +53,24 @@ header {
      text-decoration: unset !important;
 }
 .header-nav-item a:visited {
-    color: unset !important;
+    color: #000000 ;
 }
 
-.header-nav-item:last-child {
-    background-color: darkgreen;
+.header-nav-item:last-child a {
     color: #ffff;
 }
   
+  .header-nav-item:last-child  {
+    cursor: pointer;
+    background-color: darkgreen;
+  }
   .header-nav-item:hover {
     cursor: pointer;
-    color: #fff;
     background-color: darkgreen;
+  }
+
+    .header-nav-item:hover a {
+    color: #fff;
   }
   
   .header-nav-item {
