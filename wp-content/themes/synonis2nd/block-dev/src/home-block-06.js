@@ -186,7 +186,7 @@ registerBlockType("home/block-06", {
 
         return (
           <div className={`${className}`}>
-             <div className="image-overlay"></div> 
+             {/* <div className="image-overlay"></div>  */}
 
             <div className="content-wrap">
               <div className="heading-wrapper">
@@ -332,13 +332,13 @@ registerBlockType("home/block-06", {
             },
         } = props;
         return (
-          <div className={`${className}`}>
+          <div className={`${className} home-block-style-06`}>
             {mediaURL && (
               <div className="image-wrapper">
                 <img src={mediaURL} alt="画像" />
               </div>
             )}
-            <div className="image-overlay"></div>
+            <div className="image-overlay"></div> 
 
             <div className="content-wrap">
               <div className="heading-wrapper">

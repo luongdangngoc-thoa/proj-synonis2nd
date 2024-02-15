@@ -22,11 +22,6 @@
     display: block !important;
   }
 
-.content-wrap {
-   position: absolute;
-    inset: 0;
-    z-index: 100;
-}
 
 .wp-block-home-block-06 .image-wrapper {
     position: absolute;
@@ -59,6 +54,9 @@
     flex-direction: column;
     align-items: center;
     color: #ffff;
+    position: absolute;
+    inset: 0;
+    z-index: 100;
 }
 
 .content-wrap .heading-wrapper {
