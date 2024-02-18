@@ -46,20 +46,13 @@ function synonis_setup() {
 		*/
 	add_theme_support( 'post-thumbnails' );
 
-	// This theme uses wp_nav_menu() in one location.
-	register_nav_menus(
-		array(
-			'menu-1' => esc_html__( 'Primary', 'synonis' ),
-		)
-	);
 
     function register_menus()
     {
-        register_nav_menus(
-            array(
-                'main-menu' => __('Main Menu'),
-            )
-        );
+        register_nav_menus( array(
+	    	'primary_menu' => __( 'Primary Menu', 'text_domain' ),
+	    	'footer_menu'  => __( 'Footer Menu', 'text_domain' ),
+		) );
     }
     add_action('init', 'register_menus');
 
@@ -257,3 +250,6 @@ include(get_theme_file_path('/custom-blocks/block-registration/register-home-blo
 include(get_theme_file_path('/custom-blocks/block-registration/register-home-block-04.php'));
 include(get_theme_file_path('/custom-blocks/block-registration/register-home-block-05.php'));
 include(get_theme_file_path('/custom-blocks/block-registration/register-home-block-06.php'));
+
+include(get_theme_file_path('/custom-blocks/block-registration/register-common-qa.php'));
+include(get_theme_file_path('/custom-blocks/block-registration/register-common-qa-list.php'));

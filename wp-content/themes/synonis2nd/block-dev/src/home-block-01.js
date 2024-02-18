@@ -63,7 +63,7 @@ registerBlockType("home/block-01", {
       attribute: "src",
     },
   },
-
+  
   edit: (props) => {
     // props からプロパティを抽出（分割代入）
     const {
@@ -113,7 +113,7 @@ registerBlockType("home/block-01", {
     };
 
     return (
-      <div className={`${className} container`}>
+      <div className={className}>
         <div className="heading-wrapper">
           <RichText
             tagName="h2"
@@ -193,7 +193,7 @@ registerBlockType("home/block-01", {
       attributes: { heading, subHeading, list, buttonLable, buttonURL,  mediaURL },
     } = props;
     return (
-      <div className={`${className} container`}>
+      <div className={className}>
         <div className="heading-wrapper">
           <RichText.Content tagName="h2" className="heading" value={heading} />
           <RichText.Content

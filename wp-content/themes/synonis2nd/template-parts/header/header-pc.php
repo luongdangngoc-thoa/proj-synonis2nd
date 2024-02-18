@@ -1,18 +1,16 @@
 <div class="pc-header-wrapper">
     <div class="pc-header">
         <div class="header-logo">
-            <a href="<?php echo site_url() ?>">
                 <?php 
                 the_custom_logo();
                 ?>
-            </a>
         </div>
 
         <nav>
             <?php
             $header_menu_defaults = array(
-                'theme_location'  => '',
-                'menu'            => 'main-menu',
+                'theme_location'  => 'primary_menu',
+                'menu'            => 'primary_menu',
                 'container'       => '',
                 'container_id'    => '',
                 'menu_class'      => 'header-nav',

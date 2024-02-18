@@ -1,10 +1,10 @@
 <div id="js_sidenav" class="sidenav">
-    <img class="closebtn" id="closebtn" onclick="closeNav()" src="<?php bloginfo('template_directory'); ?>/assets/images/close.png"></img>
+    <img class="closebtn" id="closebtn" onclick="closeNav()" src="<?php bloginfo('template_directory'); ?>/assets/images/close.svg"></img>
 
     <?php
     $sidenav = array(
-        'theme_location'  => '',
-        'menu'            => 'main-menu',
+        'theme_location'  => 'primary_menu',
+        'menu'            => 'primary_menu',
         'container'       => '',
         'container_id'    => '',
         'menu_class'      => 'sidenav-inner',
