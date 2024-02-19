@@ -15,6 +15,8 @@ module.exports = {
         "home-block-06": "./src/home-block-06.js",
         "common-qa": "./src/common-qa.js",
         "common-qa-list": "./src/common-qa-list.js",
+        "common-title-value": "./src/common-title-value.js",
+        "common-title-value-group": "./src/common-title-value-group.js",
     },
     output: {
         path: path.join(__dirname, "../custom-blocks/build"),
@@ -60,11 +62,17 @@ module.exports = {
                     enforce: true,
                     name: "style-home-block-06", //出力されるファイル名
                 },
-                style_qa: {
-                    test: /[\\/]common-style-qa\.(sc|sa|c)ss$/, //対象のファイル style-02.scss
+                style_07: {
+                    test: /[\\/]common-style-qa\.(sc|sa|c)ss$/, 
                     chunks: "all",
                     enforce: true,
                     name: "style-common-qa", //出力されるファイル名
+                },
+                style_08: {
+                    test: /[\\/]common-style-title-value\.(sc|sa|c)ss$/, 
+                    chunks: "all",
+                    enforce: true,
+                    name: "style-common-title-value", //出力されるファイル名
                 },
                 default: false,
             },

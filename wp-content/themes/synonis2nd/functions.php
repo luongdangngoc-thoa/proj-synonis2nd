@@ -253,3 +253,5 @@ include(get_theme_file_path('/custom-blocks/block-registration/register-home-blo
 
 include(get_theme_file_path('/custom-blocks/block-registration/register-common-qa.php'));
 include(get_theme_file_path('/custom-blocks/block-registration/register-common-qa-list.php'));
+include(get_theme_file_path('/custom-blocks/block-registration/register-common-title-value.php'));
+include(get_theme_file_path('/custom-blocks/block-registration/register-common-title-value-group.php'));

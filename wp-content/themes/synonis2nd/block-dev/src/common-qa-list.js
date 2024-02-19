@@ -1,8 +1,7 @@
 import { registerBlockType } from '@wordpress/blocks';
 import { Fragment } from '@wordpress/element';
-import { RichText, InspectorControls, InnerBlocks } from '@wordpress/editor';
-import { PanelBody, Button, TextControl } from '@wordpress/components';
-import { withInstanceId } from '@wordpress/compose';
+import { RichText, InnerBlocks } from '@wordpress/block-editor';
+import { Button } from '@wordpress/components';
 import "./common-style-qa.scss";
 import "./common-editor-qa.scss";
 
@@ -37,7 +36,7 @@ registerBlockType("common/qa-list", {
 
     return (
       <Fragment>
-         <Button onClick={toggleVisibility}>{isVisible ? 'Hide Block' : 'Show Block'}</Button>
+         <Button className="button" onClick={toggleVisibility}>{isVisible ? 'Hide Block' : 'Show Block'}</Button>
         {isVisible && (
           <div className="qa-list">
             <RichText

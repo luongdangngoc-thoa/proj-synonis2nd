@@ -1,6 +1,6 @@
 import { registerBlockType } from '@wordpress/blocks';
 import { Fragment } from '@wordpress/element';
-import { InspectorControls } from '@wordpress/editor';
+import { InspectorControls, RichText } from '@wordpress/block-editor';
 import { PanelBody, Button, TextControl } from '@wordpress/components';
 import "./common-style-qa.scss";
 import "./common-editor-qa.scss";
@@ -35,17 +35,31 @@ edit: ({ attributes, setAttributes }) => {
         setAttributes({ answer: newAnswer });
       };
 
+      const boldBorderStyle = {
+        border: '1px solid #000', // Thiết lập viền đậm
+        borderRadius: '4px' ,
+        padding: '8px',
+      };
+
       return (
         <Fragment>
-          <TextControl
-            label="Question"
+          <label htmlFor="question">Question:</label>
+          <RichText
+            tagName="div"
+            className="wp-block-common-qa-question question-class"
+            style={boldBorderStyle} // Thêm kiểu dáng inline ở đây
             value={question}
             onChange={handleQuestionChange}
+            placeholder="Enter your question..."
           />
-          <TextControl
-            label="Answer"
+          <label htmlFor="answer">Answer:</label>
+          <RichText
+            tagName="div"
+            className="wp-block-common-qa-answer answer-class"
+            style={boldBorderStyle} // Thêm kiểu dáng inline ở đây
             value={answer}
             onChange={handleAnswerChange}
+            placeholder="Enter your answer..."
           />
         </Fragment>
       );
