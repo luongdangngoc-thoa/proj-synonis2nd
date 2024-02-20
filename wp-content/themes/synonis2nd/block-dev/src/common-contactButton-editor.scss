@@ -1,0 +1,32 @@
+.block-editor-block-list__block {
+    .button-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+    }
+    
+    .button-tel {
+       display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: left;
+    }
+    
+    .button-tel a {
+       display: inline-block;
+    }
+    .button-to-form {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+    .button-to-form-inner {
+        display: flex;
+        gap: 8px;
+    }
+       
+    }  
+    
+     
+    

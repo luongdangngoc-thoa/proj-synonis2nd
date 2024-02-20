@@ -6,7 +6,6 @@ module.exports = {
     ...defaultConfig,
     // 既存の設定を上書き
     entry: {
-        "wdl-block-01": "./src/wdl-block-01.js",
         "home-block-01": "./src/home-block-01.js",
         "home-block-02": "./src/home-block-02.js",
         "home-block-03": "./src/home-block-03.js",
@@ -17,6 +16,7 @@ module.exports = {
         "common-qa-list": "./src/common-qa-list.js",
         "common-title-value": "./src/common-title-value.js",
         "common-title-value-group": "./src/common-title-value-group.js",
+        "common-contactButton": "./src/common-contactButton.js",
     },
     output: {
         path: path.join(__dirname, "../custom-blocks/build"),
@@ -73,6 +73,12 @@ module.exports = {
                     chunks: "all",
                     enforce: true,
                     name: "style-common-title-value", //出力されるファイル名
+                },
+                style_09: {
+                    test: /[\\/]common-contactButton-style\.(sc|sa|c)ss$/, 
+                    chunks: "all",
+                    enforce: true,
+                    name: "style-common-contactButton", //出力されるファイル名
                 },
                 default: false,
             },
