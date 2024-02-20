@@ -255,3 +255,4 @@ include(get_theme_file_path('/custom-blocks/block-registration/register-common-q
 include(get_theme_file_path('/custom-blocks/block-registration/register-common-qa-list.php'));
 include(get_theme_file_path('/custom-blocks/block-registration/register-common-title-value.php'));
 include(get_theme_file_path('/custom-blocks/block-registration/register-common-title-value-group.php'));
+include(get_theme_file_path('/custom-blocks/block-registration/register-common-contactButton.php'));

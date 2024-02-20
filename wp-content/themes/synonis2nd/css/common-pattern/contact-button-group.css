@@ -1,0 +1,16 @@
+.contact-button-group {
+
+}
+
+.contact-button-group .wp-block-columns .wp-block-column {
+   border: 1px solid #ffff;
+}
+
+.contact-button-group .wp-block-columns.column-width {
+  width: 60% !important;
+}
+
+
+.contact-button-group .wp-block-columns.column-buttons-width {
+    width: 70% !important;
+}
