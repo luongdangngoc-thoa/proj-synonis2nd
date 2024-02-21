@@ -1,0 +1,24 @@
+/*  css for fee table */ 
+.block-fee-table {
+    max-width: 900px;
+}
+.block-fee-table thead {
+    border: 2px;
+}
+
+.block-fee-table .has-text-align-left {
+    background-color: rgb(186, 235, 191);
+}
+
+.block-fee-table .wp-block-table thead tr th {
+    background-color: rgb(10 145 25) !important;
+    color: #ffff
+}
+
+.block-fee-table .wp-block-table thead tr th {
+    text-align: center !important;
+}
+
+
+
+/*  css for fee table end */ 

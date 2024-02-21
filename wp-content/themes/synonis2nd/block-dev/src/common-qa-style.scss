@@ -1,14 +1,6 @@
-
-  .qa-wrapper {
-    border-bottom: rgb(208 208 208) solid 1px;
-    border-left: rgb(208 208 208) solid 1px;
-    border-right: rgb(208 208 208) solid 1px;
-  }
-
-  h2 + .qa-wrapper {
-    border-top: rgb(208 208 208) solid 1px;
-  }
-
+.qa-wrapper {
+    border: rgb(208 208 208) solid 1px;
+}
 
 .question-wrapper {
     padding: 0 24px;
@@ -23,72 +15,60 @@
     background-color: #f1f1f1;
 }
 
-
-  .qa-wrapper.active .question-wrapper {
+.qa-wrapper.active .question-wrapper {
     background-color: #f1f1f1;
-  }
+}
 
-   .question-wrapper h3 {
+.question-wrapper h3 {
     flex: 1;
     color: #333;
     font-weight: 400;
-  }
+}
 
-   .question-wrapper :hover  {
-     font-weight: 500;
-  }
+.question-wrapper :hover {
+    font-weight: 500;
+}
 
-    .question-wrapper .question-icon-group {
-     font-weight: 400;
-     position: relative;
-    width: 2.2rem;
-    height: 2.2rem;
-    margin-left: 0.4rem;
+.question-wrapper .question-icon-group {
+    font-weight: 400;
+    position: relative;
+    width: 12px;
+    height: 34px;
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+}
 
-    .question-wrapper .question-icon-group span {
+.question-wrapper .question-icon-group span {
     display: block;
     position: absolute;
     inset: 0;
     transition: 0.2s all;
     font-size: 24px;
-  }
+}
 
-
-
-    .qa-wrapper .question-icon-group .icon-minus {
+.qa-wrapper .question-icon-group .icon-minus {
     opacity: 0;
-  }
-  .qa-wrapper.active .question-icon-group .icon-plus {
+}
+.qa-wrapper.active .question-icon-group .icon-plus {
     opacity: 0 !important;
     transition: 0.2s all;
-  }
+}
 
-  .qa-wrapper.active .question-icon-group .icon-minus {
+.qa-wrapper.active .question-icon-group .icon-minus {
     opacity: 1 !important;
-  }
-  .answer-wrapper {
+}
+.answer-wrapper {
     max-height: 0;
     overflow: hidden;
     transition: 0.2s all ease-in;
-  }
+}
 
-   .qa-wrapper.active .answer-wrapper {
-    max-height: 80rem;
-  }
+.qa-wrapper.active .answer-wrapper {
+    max-height: 900px;
+}
 
-  .answer-wrapper p > * + * {
-    margin-top: 2rem;
-  }
-
-  .answer-wrapper p {
-    padding-bottom: 2rem;
-  }
-
-  .answer-wrapper p {
+.answer-wrapper p {
     color: #333;
     font-size: 16px;
     font-style: normal;
@@ -96,4 +76,4 @@
     line-height: calc(34 / 16);
     letter-spacing: 1px;
     padding: 0 24px;
-  }
+}

@@ -34,7 +34,7 @@ registerBlockType("common/qa", {
     };
 
     const inputStyle = {
-      border: "1px solid #000", // Thiết lập viền đậm
+      border: "1px solid #000",
       borderRadius: "4px",
       padding: "8px",
       fontSize: "14px"
@@ -46,7 +46,7 @@ registerBlockType("common/qa", {
         <RichText
           tagName="div"
           className="wp-block-common-qa-question question"
-          style={inputStyle} // Thêm kiểu dáng inline ở đây
+          style={inputStyle} 
           value={question}
           onChange={handleQuestionChange}
           placeholder="質問入力"
@@ -55,7 +55,7 @@ registerBlockType("common/qa", {
         <RichText
           tagName="div"
           className="wp-block-common-qa-answer answer"
-          style={inputStyle} // Thêm kiểu dáng inline ở đây
+          style={inputStyle} 
           value={answer}
           onChange={handleAnswerChange}
           placeholder="答え入力"

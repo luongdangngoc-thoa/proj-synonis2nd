@@ -1,31 +1,7 @@
-.wp-block-home-block-01 {
+
+.wp-block-common-qa-list {
+    padding: 30px 0 60px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 60px;
-}
-
-.wp-block-home-block-01 .image-wrapper {
-    width: 60%;
-}
-
-.wp-block-home-block-01 .image-wrapper img {
-    display: block;
-    position: relative;
-}
-
-
-.buttonLable {
-    // background-color: #068f15 ;
-}
-
-.buttonLable {
-    display: block !important;
-    text-decoration: none;
-    color: #fff !important;
-    width: 200px;
-    padding: 10px 12px;
-    background-color: #068f15;
-    text-align: center;
-    border-radius: 20px;
+    gap: 16px;
+    flex-direction: column;
 }
