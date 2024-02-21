@@ -1,0 +1,13 @@
+.wp-block-common-title-value {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.wp-block-common-title-value h3 {
+   min-width: 20%;
+}
+
+.wp-block-common-title-value p {
+   margin: 0 !important;
+}

@@ -1,93 +1,94 @@
 import { registerBlockType } from '@wordpress/blocks';
 import { Fragment } from '@wordpress/element';
 import { RichText } from '@wordpress/block-editor';
-import "./common-style-qa.scss";
-import "./common-editor-qa.scss";
+
+import "./common-title-value-style.scss";
 
 registerBlockType("common/title-value", {
-    title: "Title + Value",
-    icon: "index-card",
-    category: "layout",
-    //入力された値を保存するための属性を設定
-    attributes: {
-        title: {
-            type: 'string',
-            default: '',
-            source: 'text',
-            selector: '.title',
-        },
-        value: {
-            type: 'string',
-            default: '',
-            source: 'text',
-            selector: '.value',
-        },
+  title: "Title + Value",
+  icon: "editor-ul",
+  category: "layout",
+  //入力された値を保存するための属性を設定
+  attributes: {
+    title: {
+      type: "array",
+      default: "",
+      source: "children",
+      selector: ".title",
     },
-    edit: ({ attributes, setAttributes }) => {
-        const { title, value } = attributes;
-
-        const handleTitleChange = (newTitle) => {
-            setAttributes({ title: newTitle });
-        };
-
-        const handleValueChange = (newValue) => {
-            setAttributes({ value: newValue });
-        };
-
-        const boldBorderStyle = {
-            border: '1px solid #000', // Thiết lập viền đậm
-            borderRadius: '4px',
-            padding: '8px',
-            width: "100%"
-        };
-
-        const wrapperStyle = { 
-        display: "flex", 
-        justifyContent: "space-between",
-         alignItems: "center", "gap": "60px" 
-        }
-        const innerStyle = { 
-        display: "flex", 
-        justifyContent: "space-between",
-        alignItems: "center", "gap": "60px" ,
-        width: "100%"
-        }
-
-
-        return (
-            <Fragment>
-                <div style={wrapperStyle} >
-                    <div style={innerStyle} >
-                        <label htmlFor="question">Title:</label>
-                        <RichText
-                            tagName="div"
-                            style={boldBorderStyle} // Thêm kiểu dáng inline ở đây
-                            value={title}
-                            onChange={handleTitleChange}
-                            placeholder="Enter title..."
-                        />
-                    </div>
-                    <div style={innerStyle} >
-                        <label htmlFor="answer">Value:</label>
-                        <RichText
-                            tagName="div"
-                            style={boldBorderStyle} // Thêm kiểu dáng inline ở đây
-                            value={value}
-                            onChange={handleValueChange}
-                            placeholder="Enter value..."
-                        />
-                    </div>
-                </div>
-            </Fragment>
-        );
+    value: {
+      type: "array",
+      default: "",
+      source: "children",
+      selector: ".value",
     },
-    save: ({ attributes }) => {
-        const { title, value } = attributes;
-        return (
-            <div>
-                <h3 className="title">{title}</h3>
-                <p className="value">{value}</p>
-            </div>
-        );
-    },
+  },
+  edit: ({ attributes, setAttributes }) => {
+    const { title, value } = attributes;
+
+    const handleTitleChange = (newTitle) => {
+      setAttributes({ title: newTitle });
+    };
+
+    const handleValueChange = (newValue) => {
+      setAttributes({ value: newValue });
+    };
+
+    const wrapperStyle = {
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "center",
+      gap: "40px",
+      border: "1px solid #000", // Thiết lập viền đậm
+      borderRadius: "4px",
+      padding: "8px",
+      width: "96%",
+    };
+    const innerStyle = {
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "center",
+      gap: "20px",
+      width: "100%",
+    };
+
+    const textStyle = {
+      width: "100%",
+      fontSize: "14px",
+    };
+
+    return (
+      <Fragment>
+        <div style={wrapperStyle}>
+          <div style={innerStyle}>
+            <RichText
+              tagName="div"
+              style={textStyle}
+              value={title}
+              onChange={handleTitleChange}
+              placeholder="タイトル入力 (例：事務所名）"
+            />
+          </div>
+          <div style={innerStyle}>
+            <RichText
+              tagName="div"
+              style={textStyle}
+              value={value}
+              onChange={handleValueChange}
+              placeholder="テキスト入力(例：015まほろばO〇〇士事務所）"
+            />
+          </div>
+        </div>
+      </Fragment>
+    );
+  },
+  save: ({ attributes }) => {
+    const { title, value } = attributes;
+    return (
+      <div>
+        <RichText.Content tagName="h3" className="title" value={title} />
+        <RichText.Content tagName="p" className="value" value={value} />
+      </div>
+    );
+  },
 });

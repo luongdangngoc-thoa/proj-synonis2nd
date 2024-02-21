@@ -20,19 +20,14 @@ function common_qa_enqueue()
     );
 
     //エディター用スタイル（追加）
-    wp_register_style(
-        'common-qa-editor-style', //ハンドル名
-        //editor.scss は build ディレクトリに common-qa.css として出力される
-        get_theme_file_uri('/custom-blocks/build/common-qa.css'),
-        array('wp-edit-blocks'),  //依存スタイルのハンドル
-        filemtime(get_theme_file_path('/custom-blocks/build/common-qa.css'))
-    );
+    // wp_register_style(
+    //     'common-qa-editor-style', 
+    //     get_theme_file_uri('/custom-blocks/build/common-qa.css'),
+    //     array('wp-edit-blocks'),  
+    //     filemtime(get_theme_file_path('/custom-blocks/build/common-qa.css'))
+    // );
 
-    //ブロックタイプの登録
-
-
-
-    
+    //ブロックタイプの登録  
     register_block_type(
         'common/block-qa',
         array(

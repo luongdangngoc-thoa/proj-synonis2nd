@@ -20,13 +20,12 @@ function common_title_value_enqueue()
     );
 
     //エディター用スタイル（追加）
-    wp_register_style(
-        'common-title-value-editor-style', //ハンドル名
-        //editor.scss は build ディレクトリに common-title-value.css として出力される
-        get_theme_file_uri('/custom-blocks/build/common-title-value.css'),
-        array('wp-edit-blocks'),  //依存スタイルのハンドル
-        filemtime(get_theme_file_path('/custom-blocks/build/common-title-value.css'))
-    );
+    // wp_register_style(
+    //     'common-title-value-editor-style', 
+    //     get_theme_file_uri('/custom-blocks/build/common-title-value.css'),
+    //     array('wp-edit-blocks'),  //依存スタイルのハンドル
+    //     filemtime(get_theme_file_path('/custom-blocks/build/common-title-value.css'))
+    // );
 
     //ブロックタイプの登録
 
@@ -40,7 +39,7 @@ function common_title_value_enqueue()
             //フロント&エディター用スタイルのハンドル名を style に指定（追加）
             'style' => 'common-title-value-style',
             //エディター用スタイルのハンドル名を editor_style に指定（追加）
-            'editor_style' => 'common-title-value-editor-style',
+            // 'editor_style' => 'common-title-value-editor-style',
         )
     );
 }
