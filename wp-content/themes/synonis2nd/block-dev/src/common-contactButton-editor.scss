@@ -1,32 +1,56 @@
 .block-editor-block-list__block {
-    .button-wrapper {
+    .button-group-wrapper {
         display: flex;
         justify-content: center;
         align-items: center;
         gap: 40px;
+        padding: 12px;
+        border: 1px solid #3333;
+        background-color: #ffff;
     }
-    
-    .button-tel {
-       display: flex;
+
+    .buttonTel-wrapper {
+        display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: left;
+        width: 50%;
     }
-    
-    .button-tel a {
-       display: inline-block;
-    }
-    .button-to-form {
+
+    .buttonTel-wrapper .buttonTel-label {
+        font-size: 28px;
+        font-weight: 600;
         display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .buttonTel-wrapper span {
+        display: inline-block;
+        color: black;
+    }
+    .buttonToForm-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         flex-direction: column;
         gap: 8px;
+        background-color: #1b8000;
+        padding: 18px;
+        width: 50%;
     }
-    .button-to-form-inner {
+
+    .buttonToForm-wrapper .buttonToForm {
+        font-size: 24px;
+        font-weight: 400;
         display: flex;
-        gap: 8px;
+        align-items: center;
+        gap: 6px;
     }
-       
-    }  
-    
-     
-    
+    .buttonToForm-inner {
+        display: flex;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+}
