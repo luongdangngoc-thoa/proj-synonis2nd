@@ -243,13 +243,9 @@ add_filter('mime_types', 'webp_upload_mimes');
 // Prevent WordPress from Scaling Large Images
 add_filter('big_image_size_threshold', '__return_false');
 
-// functions.php でregister-wdl-block-01.phpをインクルードします。
-include(get_theme_file_path('/custom-blocks/block-registration/register-home-block-01.php'));
-include(get_theme_file_path('/custom-blocks/block-registration/register-home-block-02.php'));
-include(get_theme_file_path('/custom-blocks/block-registration/register-home-block-03.php'));
-include(get_theme_file_path('/custom-blocks/block-registration/register-home-block-04.php'));
-include(get_theme_file_path('/custom-blocks/block-registration/register-home-block-05.php'));
-include(get_theme_file_path('/custom-blocks/block-registration/register-home-block-06.php'));
+
+
+// functions.php block インクルードします。
 
 include(get_theme_file_path('/custom-blocks/block-registration/register-common-qa.php'));
 include(get_theme_file_path('/custom-blocks/block-registration/register-common-qa-list.php'));

@@ -1,10 +1,16 @@
 @import "./reset.css";
 @import "./common.css";
 @import "./header.css";
+@import "./footer.css";
+@import "./common-pattern/contact-button-group.css";
+@import "./common-pattern/way-guidance.css";
 @import "./page-home.css";
 @import "./page-about.css";
 @import "./page-service.css";
 @import "./page-fee.css";
 @import "./page-contact.css";
-@import "./common-pattern/contact-button-group.css";
 
+
+/* 
+#068f15 
+*/

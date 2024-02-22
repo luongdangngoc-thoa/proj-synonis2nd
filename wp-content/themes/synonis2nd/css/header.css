@@ -12,22 +12,22 @@
 
 header {
     position: fixed;
-    top: 50px;
+    top: 0px;
     left: 0;
     right: 0;
     z-index: 50;
     background-color: transparent;
     background: #fff;
-        -webkit-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
-  -moz-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
-  box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+    -webkit-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+    -moz-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+    box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
 }
 
 .pc-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height : 68px;
+    height: 68px;
 }
 
 .header-logo a {
@@ -39,7 +39,7 @@ header {
     .header-logo a {
         padding-left: 8px;
     }
-    
+
 }
 
 
@@ -63,32 +63,33 @@ header {
 }
 
 .header-nav-item a {
-    color: #000000 ;
+    color: #000000;
     padding: 18px 20px;
-    line-height: 1; 
+    line-height: 1;
     text-decoration: unset !important;
 }
+
 .header-nav-item a:visited {
-    color: #000000 ;
+    color: #000000;
 }
 
-.header-nav-item:last-child a {
-    color: #ffff;
-    background-color: darkgreen;
-    cursor: pointer;
-}
-  
-  .header-nav-item a:hover {
-    cursor: pointer;
-    color: #ffff;
-    background-color: darkgreen;
-  }
 
-  
-  .header-nav-item {
+.header-nav-item a:hover {
+    cursor: pointer;
+    color: #ffff;
+    background-color: #068f15;
+}
+
+.header-nav-item {
     font-weight: 700;
     letter-spacing: 0.06px;
-  }
+}
+
+.header-nav .current_page_item a {
+    cursor: pointer;
+    color: #ffff;
+    background-color: #068f15;
+}
 
 @media screen and (max-width: 900px) {
     header {
@@ -130,7 +131,7 @@ header {
     width: 0;
     position: fixed;
     z-index: 400;
-    top: 30px;
+    top: 0px;
     left: 0;
     background: #fff;
     overflow-x: hidden;
@@ -156,7 +157,7 @@ header {
 
 .sidenav .sidenav-inner .header-nav-item:hover {
     color: #fff;
-    background-color: darkgreen;
+    background-color: #068f15;
 }
 
 .sidenav .sidenav-inner .header-nav-item a {
@@ -174,12 +175,11 @@ header {
     display: block;
     cursor: pointer;
 }
-/*  css for header  end */
 
-
-/* css for body */
-
-main {
-    margin-top: 120px;
+.sidenav .current_page_item a {
+    cursor: pointer;
+    color: #ffff;
+    background-color: #068f15;
 }
 
+/*  css for header  end */

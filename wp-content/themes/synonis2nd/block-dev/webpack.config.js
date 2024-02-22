@@ -6,12 +6,6 @@ module.exports = {
   ...defaultConfig,
   // 既存の設定を上書き
   entry: {
-    "home-block-01": "./src/home-block-01.js",
-    "home-block-02": "./src/home-block-02.js",
-    "home-block-03": "./src/home-block-03.js",
-    "home-block-04": "./src/home-block-04.js",
-    "home-block-05": "./src/home-block-05.js",
-    "home-block-06": "./src/home-block-06.js",
     "common-qa": "./src/common-qa.js",
     "common-qa-list": "./src/common-qa-list.js",
     "common-title-value": "./src/common-title-value.js",
@@ -26,42 +20,7 @@ module.exports = {
     splitChunks: {
       //複数のエントリポイントで共通のモジュールを別のファイルとして分離
       cacheGroups: {
-        style_01: {
-          test: /[\\/]home-style-01\.(sc|sa|c)ss$/, //対象のファイル style-01.scss
-          chunks: "all",
-          enforce: true,
-          name: "style-home-block-01", //出力されるファイル名
-        },
-        style_02: {
-          test: /[\\/]home-style-02\.(sc|sa|c)ss$/, //対象のファイル style-02.scss
-          chunks: "all",
-          enforce: true,
-          name: "style-home-block-02", //出力されるファイル名
-        },
-        style_03: {
-          test: /[\\/]home-style-03\.(sc|sa|c)ss$/, //対象のファイル style-02.scss
-          chunks: "all",
-          enforce: true,
-          name: "style-home-block-03", //出力されるファイル名
-        },
-        style_04: {
-          test: /[\\/]home-style-04\.(sc|sa|c)ss$/, //対象のファイル style-02.scss
-          chunks: "all",
-          enforce: true,
-          name: "style-home-block-04", //出力されるファイル名
-        },
-        style_05: {
-          test: /[\\/]home-style-05\.(sc|sa|c)ss$/, //対象のファイル style-02.scss
-          chunks: "all",
-          enforce: true,
-          name: "style-home-block-05", //出力されるファイル名
-        },
-        style_06: {
-          test: /[\\/]home-style-06\.(sc|sa|c)ss$/, //対象のファイル style-02.scss
-          chunks: "all",
-          enforce: true,
-          name: "style-home-block-06", //出力されるファイル名
-        },
+     
         style_07: {
           test: /[\\/]common-qa-style\.(sc|sa|c)ss$/,
           chunks: "all",
